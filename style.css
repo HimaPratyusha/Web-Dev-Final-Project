@@ -26,7 +26,7 @@
   font-weight: 700;
 }
 .nav_logo span {
-  color: #85ce07;
+  color: #e77dc5;
 }
 .nav_bullet {
   text-decoration: none;
@@ -92,5 +92,97 @@ h1 {
   .nav_bar {
     top: 65.18px;
     height: calc(100vh - 65.18px);
+  }
+}
+
+/* --------------------about me---------------- */
+
+.about_me{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content_about{
+  width: 1290px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  /* margin-top: 150px; */
+}
+.content_about img{
+  width: 380px;
+  max-width: 100%;
+  height: auto;
+  padding: 0 10px;
+}
+.text_content{
+  width: 600px;
+  max-width: 100%;
+  padding: 0 10px;
+}
+.about_me_title{
+  font-size: 30px;
+  color: #684ca9;
+  letter-spacing: 1px;
+  font-weight: 1000;
+  margin-bottom: 10px;
+}
+.title_about{
+  font-size: 60px;
+  color: #e77dc5;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.desc_about{
+  font-size: 18px;
+  color: #808080;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+.resume_btn{
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #111111;
+  border-radius: 80px;
+  border: 2px solid #000000;
+}
+.resume_btn:hover{
+  background-color: rgb(225, 150, 232);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0px 15px 20px rgba(225, 150, 232, .6);
+transform: translateY(-7px);
+
+}
+@media screen and (max-width: 768px){
+  .about_me{
+      height: auto;
+      width: 100%;
+      padding: 60px 0;
+  }
+  .text_content{
+      text-align: center;
+      margin-top: 40px;
+  }
+}
+@media screen and (max-width: 414px){
+  .content_about img{
+      margin-bottom: 35px;
+  }
+  .title_about{
+      font-size: 40px;
+      margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1033px) {
+  .content_about{
+    margin-top: 450px;
   }
 }
