@@ -8,6 +8,7 @@
   width: 100%;
   background-color: #684ca9;
   padding: 1rem 3rem;
+  z-index: 100;
 }
 .nav_sec {
   display: flex;
@@ -26,7 +27,7 @@
   font-weight: 700;
 }
 .nav_logo span {
-  color: #85ce07;
+  color: #e77dc5;
 }
 .nav_bullet {
   text-decoration: none;
@@ -38,9 +39,9 @@
   border-bottom: 2px solid #ffffff;
 }
 
-h1 {
+/* h1 {
   font-size: 4rem;
-}
+} */
 #ham-menu {
   display: none;
 }
@@ -94,7 +95,7 @@ h1 {
     height: calc(100vh - 65.18px);
   }
 }
-/* ------------------------------------------------------------------------- */
+/* ------------------------------about me section------------------------------------------- */
 
 .about_me{
   height: 100vh;
@@ -186,7 +187,7 @@ transform: translateY(-7px);
 }
 /* -------------------------------------------------------------------------------- */
 
-.exp_sec_title {
+.sec_title {
   text-align: center;
   font-size: 36px;
   font-weight: 600;
@@ -194,17 +195,15 @@ transform: translateY(-7px);
   line-height: 0.8;
   color: #684ca9;
   position: relative;
-  /* margin-top: 30px; */
   margin-bottom: 30px;
   padding-bottom: 20px;
 }
-.exp_sec_title span{
+.sec_title span{
     color: rgb(240, 108, 200);
 }
 .exp_section{
   display: grid;
   align-items: center;
-  /* height: 50vh; */
   padding: 2rem;
 }
 .exp_container{
@@ -286,4 +285,86 @@ transform: translateY(-7px);
 .box_title{
   font-family: Cambria;
   font-style: italic;
+}
+
+/* --------------------------------------My Projects----------------------------- */
+
+.proj_container {
+  padding: 30px;
+}
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pro {
+  margin: 20px;
+  padding: 20px;
+  width: 500px;
+  min-height: 200px;
+  display: grid;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.pro:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.github_link,
+.project_title {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.github_link::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s;
+}
+
+.github_link:hover::after {
+  width: 100%;
+}
+.project_title {
+  color: #000000;
+  grid-row: 2/3;
+  font-size: 30px;
+}
+
+.project_desc {
+  font-family: Cambria;
+  font-style: oblique;
+  grid-row: 3/4;
+  font-weight: 400;
+  color: #000000;
+}
+
+.github_btn {
+  grid-row: 4/5;
+  align-self: center;
+  font-size: 25px;
+}
+.first_project {
+  background: rgba(106, 145, 236, 0.4)
+}
+
+.second_project {
+  background: rgba(186, 57, 200, 0.4);
+}
+
+@media (max-width: 1600px) {
+  .projects {
+    justify-content: center;
+  }
 }
