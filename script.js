@@ -1,25 +1,47 @@
-let hamMenuIcon = document.getElementById("ham-menu");
-let navBar = document.getElementById("nav-bar");
-let navLinks = navBar.querySelectorAll("li");
+const hamMenuIcon = document.getElementById("ham-menu");
+const navBar = document.getElementById("nav-bar");
+const navLinks = [...navBar.querySelectorAll("li")];
 
 hamMenuIcon.addEventListener("click", () => {
   navBar.classList.toggle("active");
   hamMenuIcon.classList.toggle("fa-times");
 });
-navLinks.forEach((navLinks) => {
-  navLinks.addEventListener("click", () => {
+
+navLinks.forEach((navLink) => {
+  navLink.addEventListener("click", () => {
     navBar.classList.remove("active");
     hamMenuIcon.classList.toggle("fa-times");
   });
 });
 
 // ====================accordian=========================================
-var dropdown = document.querySelectorAll('.exp_box');
-dropdown.forEach(item =>{
-    item.addEventListener('click',() =>{
-        for(var i = 0; i < dropdown.length; i++){
-            dropdown[i].classList.remove('trigger_drop');
-        }
-        item.classList.add('trigger_drop')
-    })
-})
+const dropdowns = document.querySelectorAll(".exp_box");
+dropdowns.forEach((dropdown) => {
+  dropdown.addEventListener("click", () => {
+    dropdowns.forEach((dropdown) => {
+      dropdown.classList.remove("trigger_drop");
+    });
+    dropdown.classList.add("trigger_drop");
+  });
+});
+
+// ========================form===========================
+
+const form = document.querySelector(".contact_sec");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const { value: name } = document.getElementById("name");
+  const { value: email } = document.getElementById("email");
+  const { value: message } = document.getElementById("message");
+  if (!name.trim() && !email.trim()) {
+    console.warn("You must enter some data to submit this form");
+  } else {
+    const formattedName = name.trim() || "no submission";
+    const formattedEmail = email.trim() || "no submission";
+    const formattedMessage = message.trim() || "no submission";
+    console.log("======== Form Submission =========");
+    console.log(`   Username: ${formattedName}`);
+    console.log(`   Email: ${formattedEmail}`);
+    console.log(`   Message: ${formattedMessage}`);
+  }
+});
